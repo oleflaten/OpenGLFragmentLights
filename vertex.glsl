@@ -20,9 +20,6 @@ uniform lowp vec3 ambientColor;
 uniform lowp vec3 diffuseColor;
 uniform lowp vec3 specularColor;
 
-//could come from the program
-const float shininess = 32.0;
-
 void main()
 {
     // Get vertex position in eye coordinates and send to the fragment shader
