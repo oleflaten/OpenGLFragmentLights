@@ -3,8 +3,8 @@
 // Phong reflection model. The interpolation method that is used is
 // Phong shading (per-fragment shading) and therefore the actual
 // lighting calculations are implemented here in the fragment shader.
+
 //precision mediump float;
-//varying vec2 vTextureCoordinates;
 varying mediump vec4 col;
 varying vec3 vNormalEye;
 varying vec3 vPositionEye3;
@@ -12,7 +12,6 @@ uniform vec3 lightPosition;
 uniform vec3 ambientColor;
 uniform vec3 diffuseColor;
 uniform vec3 specularColor;
-//uniform sampler2D uSampler;
 
 const float shininess = 32.0;
 
@@ -34,8 +33,6 @@ void main() {
     vec3 lightWeighting = ambientColor +
     diffuseColor * diffuseLightWeighting +
     specularColor * specularLightWeighting;
-    // Sample the texture
-    //vec4 texelColor = texture2D(uSampler, vTextureCoordinates);
     // modulate texel color with lightweigthing and write as final color
     gl_FragColor = vec4(lightWeighting.rgb * col.rgb, col.a);
 }

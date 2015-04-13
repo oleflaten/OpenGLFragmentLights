@@ -25,11 +25,9 @@ private:
     GLuint m_diffuseColorUniform;
     GLuint m_specularColorUniform;
 
+    //Light pos and colors:
     QVector3D lightPos = QVector3D(10.0f, 0.0f, 30.0f);
-    //QVector3D ambientColor= QVector3D(0.3f, 1.0f, 1.0f);
-    //QVector3D ambientColor= QVector3D(0.9f, 0.9f, 1.0f);
-    //QVector3D ambientColor= QVector3D(1.0f, 1.0f, 1.0f);
-    QVector3D ambientColor= QVector3D(0.1f, 0.1f, 0.1f);
+    QVector3D ambientColor= QVector3D(0.2f, 0.2f, 0.2f);
     QVector3D diffuseColor = QVector3D(0.7f, 0.7f, 0.7f);
     QVector3D specularColor = QVector3D(1.0f, 1.0f, 1.0f);
 
@@ -45,22 +43,12 @@ private:
     //Geometry:
     GLfloat vertices[27] =
     {
-         0.0f, 0.707f, 0.0f,    1.0f, 0.0f, 0.0f,   0.0f, 0.0f, 1.0f,   //vertex 1
-        -0.5f, -0.5f, 0.0f,     0.0f, 1.0f, 0.0f,   0.0f, 0.0f, 1.0f,   //vertex 2
-         0.5f, -0.5f, 0.0f,     0.0f, 0.0f, 1.0f,   0.0f, 0.0f, 1.0f    //vertex 3
+         0.0f, 0.707f, 0.0f,    1.0f, 0.2f, 0.2f,   0.0f, 0.0f, 1.0f,   //vertex 1
+        -0.5f, -0.5f, 0.0f,     0.2f, 1.0f, 0.2f,   0.0f, 0.0f, 1.0f,   //vertex 2
+         0.5f, -0.5f, 0.0f,     0.2f, 0.2f, 1.0f,   0.0f, 0.0f, 1.0f    //vertex 3
     };
 
-    GLushort indices[3] =
-    {
-        0, 1, 2
-    };
-
-//    GLfloat light[] =
-//    {
-
-
-//    }
-
+    GLushort indices[3] =  { 0, 1, 2 };
 };
 
 #endif // TRIANGLEWINDOW_H
